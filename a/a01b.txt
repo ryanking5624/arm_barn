@@ -1,0 +1,29 @@
+# This text file contains historical data for every team/score/base/out/inning
+# situation in the majors from 1979 to 1990.  It was derived from Retrosheet
+# data (www.retrosheet.org).
+# 
+# The first field is the team (home, visitor).  The next is the inning.
+# The next is the number of outs.  Then comes the base situation (see below).
+# The last two are the score -- batting team minus pitching team.
+# 
+# The second last field is the number of times this situation occurred; the
+# last field is the number of those games the batting team eventually won.
+# 
+# For instance,
+# 
+# "H",1,0,5,2,54,49
+# 
+# means that the home team is batting in the first inning, with no outs and
+# a runner on third, up by two runs.  There were 54 of those games, and the
+# batting team eventually won 49 of them.
+# 
+# Base/out situations:
+#   
+# 1 = nobody on
+# 2 = runner on 1st
+# 3 = runner on 2nd
+# 4 = runners on 1st and 2nd
+# 5 = runner on 3rd
+# 6 = runners on 1st and 3rd
+# 7 = runners on 2nd and 3rd
+# 8 = bases loaded
