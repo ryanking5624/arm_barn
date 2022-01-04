@@ -1,7 +1,7 @@
-setwd("~/arm_barn")
+setwd("~/GitHub/arm_barn")
 source("header.R")
 
-tran <- jsonlite::read_json("transactions2019.json")$transaction_all$queryResults$row
+tran <- jsonlite::read_json("import/transactions2019.json")$transaction_all$queryResults$row
 
 tran_stack <- bind_rows(tran %>%
                           unlist()) %>%
@@ -19,5 +19,5 @@ tran_stack <- bind_rows(tran %>%
             .funs = ~ as_date(str_sub(.x, end = 10))) %>%
   select(-r)
 
-write_rds(tran_stack, "a02a.rds")
+write_rds(tran_stack, "export/a/a02a.rds")
 

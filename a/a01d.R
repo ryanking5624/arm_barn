@@ -1,8 +1,8 @@
-setwd("~/arm_barn")
+setwd("~/GitHub/arm_barn")
 source("header.R")
 
 # import data ----
-prob <- read_csv("a01b.csv")
+prob <- read_csv("export/a/a01b.csv")
 all2019 <- read_csv("~/download.folder/unzipped/all2019.csv")
 
 # recalculate win probs with logistic regression ----
@@ -77,4 +77,4 @@ final_data <- combined %>%
   left_join(rates) %>%
   select(game_id:year, li)
 
-write_rds(final_data, "a01d.rds")
+write_rds(final_data, "export/a/a01d.rds")

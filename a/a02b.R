@@ -1,7 +1,7 @@
-setwd("~/arm_barn")
+setwd("~/GitHub/arm_barn")
 source("header.R")
 
-tran <- read_rds("a02a.rds") %>%
+tran <- read_rds("export/a/a02a.rds") %>%
   filter(player_id != "") %>%
   mutate(type_flag = case_when(grepl(" transferred ", note) ~ "Still Inactive",
                                grepl(" activated ", note) ~ "Activated",
@@ -31,7 +31,7 @@ tran <- read_rds("a02a.rds") %>%
                                  effective_date,
                                  trans_date))
 
-pbp <- read_rds("a01e.rds")
+pbp <- read_rds("export/a/a01e.rds")
 
 pit_ids <- pbp %>%
   pull(pit_id) %>%
@@ -57,9 +57,9 @@ if(update_ids){
     print(i/nrow(id_dict))
     Sys.sleep(0.1)
   }
-  write_rds(id_dict, "a02b_id_dict.rds")
+  write_rds(id_dict, "export/a/a02b_id_dict.rds")
 }else{
-  id_dict <- read_rds("a02b_id_dict.rds")
+  id_dict <- read_rds("export/a/a02b_id_dict.rds")
 }
 
 start_date <- pbp %>% pull(game_date) %>% min()

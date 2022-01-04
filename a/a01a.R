@@ -1,4 +1,4 @@
-setwd("~/arm_barn")
+setwd("~/GitHub/arm_barn")
 source("header.R")
 
 all2019 <- read_csv("~/download.folder/unzipped/all2019.csv") %>%
@@ -7,4 +7,4 @@ all2019 <- read_csv("~/download.folder/unzipped/all2019.csv") %>%
          game_number = str_sub(game_id, start = -1),
          home_team_id = str_sub(game_id, start = 1, end = 3))
 
-write_rds(all2019, "a01a.rds")
+write_rds(all2019, "export/a/a01a.rds")

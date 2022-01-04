@@ -1,8 +1,8 @@
-setwd("~/arm_barn")
+setwd("~/GitHub/arm_barn")
 source("header.R")
 
 # import data ----
-pitcher_data <- read_rds("b00.rds") %>%
+pitcher_data <- read_rds("export/b/b00.rds") %>%
   column_to_rownames("pit_id") %>%
   filter(events >= 8, mean_starter_flag < 1)
 

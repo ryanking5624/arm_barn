@@ -1,8 +1,8 @@
-setwd("~/arm_barn")
+setwd("~/GitHub/arm_barn")
 source("header.R")
 
-all2019 <- read_rds("a01a.rds")
-all2019_li <- read_rds("a01d.rds")
+all2019 <- read_rds("export/a/a01a.rds")
+all2019_li <- read_rds("export/a/a01d.rds")
 
 all2019 <- all2019 %>%
   left_join(all2019_li)
@@ -77,5 +77,5 @@ pitcher_breakdown <- pbp_summary %>%
             mean_pct_bottom_faced = weighted.mean(pct_bottom_faced, w = batters_faced),
             mean_li_enter = mean(li_enter))
 
-write_rds(pitcher_breakdown, "b00.rds")
+write_rds(pitcher_breakdown, "export/b/b00.rds")
 

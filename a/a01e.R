@@ -1,7 +1,7 @@
-setwd("~/arm_barn")
+setwd("~/GitHub/arm_barn")
 source("header.R")
 
-pbp <- read_rds("a01a.rds") %>% 
+pbp <- read_rds("export/a/a01a.rds") %>% 
   mutate(game_date = case_when(game_id == "DET201905190" & (inn_ct > 7 | (inn_ct == 7 & bat_home_it == 1)) ~ "2019-09-06",
                                TRUE ~ str_sub(game_id, start = 4, end = -2)) %>%
            as_date(., "%Y%m%d"))
@@ -73,4 +73,4 @@ pbp_susp <- pbp %>%
                                  game_date,
                                  resume_date))
 
-write_rds(pbp_susp, "a01e.rds")
+write_rds(pbp_susp, "export/a/a01e.rds")
